@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Amfora Brno – Pronájem, oslavy a firemní akce</title>
+    <!-- CSS file link -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Social media and services icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- Flag icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css"
+    />
+    <link rel="icon" type="image/png" href="images/gold_logo.png" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <div class="logo">
+          <img src="./images/gold_logo.png" alt="Amfora Logo" />
+          <h1>Amfora Brno</h1>
+        </div>
+      </div>
+      <div class="header-right">
+        <button id="navToggle" aria-label="Menu" class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav id="mainNav">
+          <a href="#us">Úvod</a>
+          <a href="#services">Služby</a>
+          <a href="#gallery">Fotogalerie</a>
+          <a href="#reservation">Rezervace</a>
+          <a href="#contact">Kontakt</a>
+        </nav>
+        <p class="header-desc">
+          Ideální místo pro vaše firemní nebo soukromní akce a oslavy.
+        </p>
+      </div>
+    </header>
+
+    <section id="us" class="hero">
+      <h2>Naše prostory</h2>
+      <div class="hero-content">
+        <div class="hero-box">
+          <h3>Sklep pro 40 osob</h3>
+          <p>
+            Kapacita až 40 osob, ideální pro menší oslavy nebo firemní akce.
+          </p>
+        </div>
+        <div class="hero-box">
+          <h3>Sklep pro 60 osob</h3>
+          <p>
+            Kapacita až 60 osob, ideální pro středně velké oslavy, firemní akce
+            či menší svatby.
+          </p>
+        </div>
+        <div class="hero-box">
+          <h3>Sklep s grilem a místem na občerstvením.</h3>
+          <p>
+            Nejlepší místo pro grilování, ideální pro oslavy a firemní akce
+            spojené s jídlem a pitím.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <h2>Naše služby</h2>
+      <div class="service-boxes">
+        <div
+          class="service"
+          data-desc="Pronájem jednotlivých prostorů nebo celého sklepa. Bez doplňkových služeb."
+        >
+          <i class="fas fa-home" aria-hidden="true"></i>Pronájem prostoru
+        </div>
+        <div
+          class="service"
+          data-desc="Pronájem prostorů se zaměřeným na meetingy a školení. Možnost využití projektoru."
+        >
+          <i class="fas fa-briefcase" aria-hidden="true"></i>Firemní akce
+        </div>
+        <div
+          class="service"
+          data-desc="Nabíkdy na míru pro soukromé oslavy a svatby. Možnost využití grilu a doplňkových služeb."
+        >
+          <i class="fas fa-wine-glass" aria-hidden="true"></i>Svatby/Oslavy
+        </div>
+        <div
+          class="service"
+          data-desc="Doplňková služba k pronájmům. Zajištění občerstvení a personalu."
+        >
+          <i class="fas fa-cutlery" aria-hidden="true"></i>Catering
+        </div>
+      </div>
+      <p class="service-desc">
+        Jsme schopni upravit prostor tak, aby splňoval vaše požadavky.<br />
+        V případě cateringu nabízíme možnost baru a obsluhujícího personálu.
+      </p>
+    </section>
+
+    <section id="gallery" class="gallery">
+      <h2>Fotogalerie</h2>
+      <div class="carousel">
+        <div class="carousel-track">
+          <img src="./images/alco_nonalco.jpeg" alt="Nápoje" />
+          <img src="./images/bottles.jpeg" alt="Alkoholické nápoje" />
+          <img src="./images/cake.jpeg" alt="Svatební dort" />
+          <img src="./images/heart_cake.jpeg" alt="Srdcový dort" />
+          <img src="./images/candleholder.jpeg" alt="Svatební dekorace" />
+          <img src="./images/catering.jpeg" alt="Catering" />
+          <img src="./images/catering_detail.jpeg" alt="Detail cateringu" />
+          <img src="./images/full_table_set.jpeg" alt="Plně prostřený stůl" />
+          <img src="./images/meat_dish.jpeg" alt="Maso na talíři" />
+          <img
+            src="./images/meat_potatoes_paprika.jpeg"
+            alt="Maso s bramborami a paprikou"
+          />
+          <img src="./images/tortillas.jpeg" alt="Tortilly" />
+          <img src="./images/tables_display.jpeg" alt="Stoly s jídlem" />
+        </div>
+        <button class="carousel-btn prev">&#10094;</button>
+        <button class="carousel-btn next">&#10095;</button>
+      </div>
+    </section>
+
+    <section id="reservation" class="reservation">
+      <form id="reservationForm" action="sendemail.php" method="POST">
+        <label for="name">Jméno:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Např. Jan Novák"
+          required
+        />
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Např. jannovak1@seznam.cz"
+          required
+        />
+        <label for="people">Počet osob:</label>
+        <input
+          type="number"
+          id="people"
+          name="people"
+          min="1"
+          max="100"
+          placeholder="1-100"
+          required
+        />
+        <label for="eventType">Prostor:</label>
+        <select id="eventType" name="eventType" required>
+          <option value="">Vyberte prostor k pronájmu</option>
+          <option value="40-ppl">Sklep pro 40 osob</option>
+          <option value="60-ppl">Sklep pro 60 osob</option>
+          <option value="gril">Sklep s grilem</option>
+          <option value="all">Celý prostor</option>
+        </select>
+        <label for="message">Poznámka:</label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Detaily ohledně vaších požádavku..."
+        ></textarea>
+        <button type="submit">Odeslat poptávku</button>
+      </form>
+      <div id="status"></div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Kontakt</h2>
+      <div class="contact-flex">
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2606.3125854257232!2d16.6349939!3d49.213598700000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471294860672b32b%3A0xd2eb00ab8d4012b0!2sHotel%20Amfora!5e0!3m2!1sit!2scz!4v1754474204669!5m2!1sit!2scz"
+            width="100%"
+            height="300"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <div class="contact-tiles">
+          <div class="contact-tile">
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+            <span>Dukelská třída 1556/8, Brno-Husovice, Česká Republika</span>
+          </div>
+          <div class="contact-tile">
+            <i class="fa fa-phone-square" aria-hidden="true"></i>
+            <span
+              ><!--<a href="tel:+420776428638">+420 776 428 638</a> <br />-->
+              <a href="tel:+420773961862">+420 773 961 862</a
+              ><span class="fi fi-ua" id="telephone"></span
+            ></span>
+          </div>
+          <div class="contact-tile">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <span
+              ><a href="mailto:amfora.brno@gmail.com"
+                >amfora.brno@gmail.com</a
+              ></span
+            >
+          </div>
+          <div class="contact-tile">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+            <span
+              >Instagram Amfora Brno<br /><a
+                href="https://www.instagram.com/amforabrno/"
+                target="_blank"
+                ><span class="fi fi-cz"></span
+              ></a>
+              <span class="spacer">______</span>
+              <a href="https://www.instagram.com/amfora.brno/" target="_blank"
+                ><span class="fi fi-ua"></span></a
+            ></span>
+          </div>
+          <div class="contact-tile">
+            <i class="fab fa-facebook-square" aria-hidden="true"></i>
+            <span
+              >Facebook Amfora Brno<br /><a
+                href="https://www.facebook.com/profile.php?id=61574228067886"
+                target="_blank"
+                ><span class="fi fi-cz"></span
+              ></a>
+              <span class="spacer">______</span>
+              <a
+                href="https://www.facebook.com/profile.php?id=61578160112465"
+                target="_blank"
+                ><span class="fi fi-ua"></span></a
+            ></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        &copy; 2025 Amfora Brno<br />
+        By <a href="mailto:jsdeveloperbrno@gmail.com">Gianni Garufi</a>
+      </p>
+    </footer>
+    <button id="backToTop" title="backToTop">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </button>
+  </body>
+</html>
